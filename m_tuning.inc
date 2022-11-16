@@ -1,3 +1,5 @@
+//----------------------------------[IssayRoy Dev]
+
 #define MAX_TUNING_MODELS 	17
 
 enum E_VEHICLE_STRUCTS {
@@ -5,7 +7,6 @@ enum E_VEHICLE_STRUCTS {
 }
 
 new g_vehicle[MAX_VEHICLES][E_VEHICLE_STRUCTS];
-
 
 enum E_TUNING_MODELS
 {
