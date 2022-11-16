@@ -82,22 +82,7 @@ public: Tuning_OnMenuEvent(playerid, event, category, item)
       STRING_GLOBAL[0] = EOS;
       if(category == 5)
       {
-              if(GetPlayerMoneyEx(playerid) < 2000000) return GameText(playerid, "Недостаточно средств", 4000, 2);
-              GivePlayerMoneyEx(playerid, -2000000, "Обвес", true, true);
-              new price = (2000000 / 100) * 40;
-        new index = GetVehicleData(vehicleid, V_ACTION_ID);
-        new query[1512];
-
-        if(GetBusinessData(GetPVarInt(playerid, "sto_id"), B_GANG) != 0)
-        {
-            new prices = price / 100 * 20;
-            GiveFamilyItem(GetBusinessData(GetPVarInt(playerid, "sto_id"), B_GANG),9,0,prices);
-            AddBusinessData(GetPVarInt(playerid, "sto_id"), B_BALANCE, +, price-prices);
-        }
-        else
-        {
-            AddBusinessData(GetPVarInt(playerid, "sto_id"), B_BALANCE, +, price);
-        }
+             
         for(new idx = 0; idx != sizeof g_tuning_models; idx ++)
         {
           if(g_tuning_models[idx][E_MODEL_ID] == GetVehicleModel(vehicleid))
