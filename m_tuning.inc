@@ -6,11 +6,6 @@ enum E_VEHICLE_STRUCTS {
 
 new g_vehicle[MAX_VEHICLES][E_VEHICLE_STRUCTS];
 
-enum E_VEHICLE_TUNING_STRUCT {
-	VT_MODEL[MAX_TUNING_MODELS]
-}
-
-new g_vehicle_tuning_temp[MAX_VEHICLES][E_VEHICLE_TUNING_STRUCT];
 
 enum E_TUNING_MODELS
 {
@@ -69,7 +64,6 @@ public: Tuning_OnMenuEvent(playerid, event, category, item)
 					if(g_tuning_models[idx][E_MODEL_ID] == GetVehicleModel(vehicleid))
 					{
 						SendPacket_Tun(playerid, vehicleid, g_tuning_models[idx][E_ITEM_ID][item]);
-						g_vehicle_tuning_temp[vehicleid][VT_MODEL][item] = g_tuning_models[idx][E_ITEM_ID][item];
 						break;
 					}
 				}
