@@ -91,7 +91,7 @@ public: Tuning_OnMenuEvent(playerid, event, category, item)
         if(IsAOwnableCar(vehicleid))
         {
           mysql_format(mysql, query, sizeof query, "UPDATE ownable_cars SET obves='%s' WHERE id=%d", STRING_GLOBAL,GetOwnableCarData(index, OC_SQL_ID));
-          mysql_query(mysql, query, false);
+          mysql_tquery(mysql, query);
         }
         format(g_ownable_car[index][OC_OBVES], 111, STRING_GLOBAL);
       }
